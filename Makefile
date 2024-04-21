@@ -3,6 +3,7 @@ compiler_cxx := g++
 flags_compiler_cxx :=\
 --std=c++11\
 -Wall\
+-lasan\
 -ggdb
 
 sort_strings:\
