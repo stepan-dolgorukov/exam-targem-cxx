@@ -128,3 +128,9 @@ exam::string::operator+=( const exam::string& operand_right )
   operator=( operator+( operand_right ) );
   return *this;
 }
+
+char
+exam::string::operator[]( std::size_t index ) const
+{
+  return _content[ index ];
+}

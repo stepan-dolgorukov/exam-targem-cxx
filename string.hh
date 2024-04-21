@@ -46,6 +46,9 @@ namespace exam
     exam::string&
     operator+=( const char* operand_right );
 
+    char
+    operator[]( std::size_t index ) const;
+
     friend
     std::ostream&
     operator<<( std::ostream& stream_output,
