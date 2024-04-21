@@ -2,6 +2,7 @@
 #define STRING_HH
 
 #include <cstddef>
+#include <ostream>
 
 namespace exam
 {
@@ -24,6 +25,19 @@ namespace exam
     length( void ) const
     {
       return _length;
+    }
+
+    friend
+    std::ostream&
+    operator<<( std::ostream& stream_out,
+                const exam::string& str_out )
+    {
+      for( std::size_t i{ 0u }; i < str_out.length(); ++i )
+      {
+        stream_out << str_out._content[ i ];
+      }
+
+      return stream_out;
     }
   };
 }
