@@ -57,3 +57,23 @@ exam::string::operator=( const exam::string& source )
 
   return *this;
 }
+
+exam::string
+exam::string::operator+( const exam::string& operand_right )
+{
+  const std::size_t
+    length_result{ this->length() + operand_right.length() };
+
+  char* const content_result{ new char[ length_result + 1 ]{} };
+  content_result[ length_result ] = '\0';
+
+  std::memcpy( content_result,
+               _content,
+               length()        );
+
+  std::memcpy( content_result + length(),
+               operand_right._content,
+               operand_right.length()     );
+
+  return { content_result };
+}
