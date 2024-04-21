@@ -75,5 +75,8 @@ exam::string::operator+( const exam::string& operand_right )
                operand_right._content,
                operand_right.length()     );
 
-  return { content_result };
+  const exam::string result{ content_result };
+  delete[] content_result;
+
+  return result;
 }
