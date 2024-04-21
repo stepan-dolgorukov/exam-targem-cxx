@@ -86,3 +86,10 @@ exam::string::operator+( const exam::string& operand_right )
 
   return result;
 }
+
+exam::string&
+exam::string::operator+=( const exam::string& operand_right )
+{
+  operator=( operator+( operand_right ) );
+  return *this;
+}
