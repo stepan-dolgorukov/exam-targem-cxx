@@ -28,6 +28,9 @@ namespace exam
       return _length;
     }
 
+    exam::string&
+    operator=( const exam::string& source );
+
     friend
     std::ostream&
     operator<<( std::ostream& stream_out,
