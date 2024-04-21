@@ -9,4 +9,4 @@ if [ ! -f wordlist.${size} ]; then
   wget https://www.mit.edu/~ecprice/wordlist.${size}
 fi
 
-./sort_strings < wordlist.${size}
+./sort_strings <wordlist.${size}
