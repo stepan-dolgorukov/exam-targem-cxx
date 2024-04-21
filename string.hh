@@ -68,8 +68,13 @@ namespace exam
                 exam::string& string_output )
     {
       for( char character_in;
-           stream_input >> character_in; )
+           stream_input.get( character_in ); )
       {
+        if( stream_input.eof() || std::isspace( character_in ) )
+        {
+          return stream_input;
+        }
+
         string_output += exam::string( character_in );
       }
 
