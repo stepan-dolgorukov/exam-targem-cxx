@@ -33,6 +33,9 @@ namespace exam
     exam::string&
     operator=( const char source[] );
 
+    exam::string&
+    operator=( exam::string&& source );
+
     exam::string
     operator+( const exam::string& operand_right );
 

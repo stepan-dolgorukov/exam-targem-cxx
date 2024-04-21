@@ -86,6 +86,25 @@ exam::string::operator=( const exam::string& source )
 }
 
 exam::string&
+exam::string::operator=( exam::string&& source )
+{
+  if( this == &source )
+  {
+    return *this;
+  }
+
+  delete[] _content;
+
+  _length = source._length;
+  _content = source._content;
+
+  source._content = nullptr;
+  source._length = 0;
+
+  return *this;
+}
+
+exam::string&
 exam::string::operator=( const char source[] )
 {
   return operator=( exam::string( source ) );
