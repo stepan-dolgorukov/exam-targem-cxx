@@ -23,9 +23,21 @@ main( void )
 
       for( std::size_t i{}; i < length; ++i )
       {
-        if( left[ i ] != right[ i ] )
+        char character_left{}, character_right{};
+
+        if ( i < left.length() )
         {
-          return left[ i ] > right[ i ];
+          character_left = left[ i ];
+        }
+
+        if( i < right.length() )
+        {
+          character_right = right[ i ];
+        }
+
+        if( character_left != character_right )
+        {
+          return character_left > character_right;
         }
       }
 
