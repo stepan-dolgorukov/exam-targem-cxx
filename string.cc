@@ -81,6 +81,12 @@ exam::string::operator=( const exam::string& source )
   return *this;
 }
 
+exam::string&
+exam::string::operator=( const char source[] )
+{
+  return operator=( exam::string( source ) );
+}
+
 exam::string
 exam::string::operator+( const exam::string& operand_right )
 {
