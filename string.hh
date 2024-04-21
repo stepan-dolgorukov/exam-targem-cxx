@@ -3,6 +3,7 @@
 
 #include <cstddef>
 #include <ostream>
+#include <istream>
 
 namespace exam
 {
@@ -46,6 +47,20 @@ namespace exam
       }
 
       return stream_out;
+    }
+
+    friend
+    std::istream&
+    operator>>( std::istream& stream_input,
+                exam::string& str_output    )
+    {
+      for( char character_in;
+           stream_input >> character_in; )
+      {
+        str_output += exam::string( character_in );
+      }
+
+      return stream_input;
     }
   };
 }
