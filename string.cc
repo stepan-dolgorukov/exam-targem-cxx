@@ -23,6 +23,17 @@ exam::string::string( const char initial[] )
   std::memcpy( _content, initial, length );
 }
 
+exam::string::string( const exam::string& source )
+{
+  delete[] _content;
+
+  _length = source._length;
+  _capacity = source._capacity;
+  _content = new char[ _capacity ]{};
+
+  std::memcpy( _content, source._content, _length );
+}
+
 exam::string::~string( void )
 {
   delete[] _content;
