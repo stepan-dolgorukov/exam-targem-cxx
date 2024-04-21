@@ -31,6 +31,9 @@ namespace exam
     exam::string
     operator+( const exam::string& operand_right );
 
+    exam::string&
+    operator+=( const exam::string& operand_right );
+
     friend
     std::ostream&
     operator<<( std::ostream& stream_out,
