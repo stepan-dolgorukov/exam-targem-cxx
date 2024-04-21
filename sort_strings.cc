@@ -16,7 +16,7 @@ main( void )
 
   auto greater_lexicographically{
     []( const exam::string& left,
-        const exam::string& right )
+        const exam::string& right ) -> bool
     {
       std::size_t length{ std::max( left.length(),
                                     right.length() ) };
