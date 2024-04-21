@@ -5,16 +5,15 @@
 #include <ostream>
 #include <istream>
 
+#include <iostream>
+
 namespace exam
 {
   class string
   {
   private:
     char* _content{ nullptr };
-
-    std::size_t
-      _length{ 0u },
-      _capacity{ 0u };
+    std::size_t _length{ 0u };
 
   public:
     string( void ) = default;

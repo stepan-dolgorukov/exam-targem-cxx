@@ -19,7 +19,7 @@ exam::string::string( const char initial[] )
   }
 
   _content = new char[ length ]{};
-  _length = _capacity = length;
+  _length = length;
 
   std::memcpy( _content, initial, length );
 }
@@ -29,9 +29,13 @@ exam::string::string( const exam::string& source )
   delete[] _content;
 
   _length = source._length;
-  _capacity = source._capacity;
-  _content = new char[ _capacity ]{};
 
+  if ( 0 == _length )
+  {
+    return;
+  }
+
+  _content = new char[ _length ]{};
   std::memcpy( _content, source._content, _length );
 }
 
@@ -74,8 +78,7 @@ exam::string::operator=( const exam::string& source )
   delete[] _content;
 
   _length = source._length;
-  _capacity = source._capacity;
-  _content = new char[ _capacity ]{};
+  _content = new char[ _length ]{};
 
   std::memcpy( _content, source._content, _length );
 
