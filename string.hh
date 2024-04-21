@@ -23,10 +23,7 @@ namespace exam
     ~string( void );
 
     std::size_t
-    length( void ) const
-    {
-      return _length;
-    }
+    length( void ) const;
 
     exam::string&
     operator=( const exam::string& source );

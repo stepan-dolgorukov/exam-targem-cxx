@@ -39,6 +39,12 @@ exam::string::~string( void )
   delete[] _content;
 }
 
+std::size_t
+exam::string::length( void ) const
+{
+  return _length;
+}
+
 exam::string&
 exam::string::operator=( const exam::string& source )
 {
