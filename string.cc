@@ -34,6 +34,12 @@ exam::string::string( const exam::string& source )
   std::memcpy( _content, source._content, _length );
 }
 
+exam::string::string( char initial )
+{
+  _content = new char[ 1 ]{ initial };
+  _length = 1;
+}
+
 exam::string::~string( void )
 {
   delete[] _content;
