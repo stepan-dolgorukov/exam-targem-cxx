@@ -40,6 +40,17 @@ exam::string::string( char initial )
   _length = 1;
 }
 
+exam::string::string( exam::string&& source )
+{
+  delete[] _content;
+
+  _length = source._length;
+  _content = source._content;
+
+  source._content = nullptr;
+  source._length = 0;
+}
+
 exam::string::~string( void )
 {
   delete[] _content;

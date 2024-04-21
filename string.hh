@@ -21,6 +21,7 @@ namespace exam
     string( const char initial[] );
     string( const exam::string& source );
     string( char initial );
+    string( exam::string&& source );
 
     ~string( void );
 
