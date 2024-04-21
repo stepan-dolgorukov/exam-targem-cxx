@@ -38,3 +38,22 @@ exam::string::~string( void )
 {
   delete[] _content;
 }
+
+exam::string&
+exam::string::operator=( const exam::string& source )
+{
+  if( this == &source )
+  {
+    return *this;
+  }
+
+  delete[] _content;
+
+  _length = source._length;
+  _capacity = source._capacity;
+  _content = new char[ _capacity ]{};
+
+  std::memcpy( _content, source._content, _length );
+
+  return *this;
+}
