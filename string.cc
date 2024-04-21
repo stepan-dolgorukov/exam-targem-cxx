@@ -117,6 +117,12 @@ exam::string::operator+( const char* operand_right )
 }
 
 exam::string&
+exam::string::operator+=( const char* operand_right )
+{
+  return operator+=( exam::string( operand_right ) );
+}
+
+exam::string&
 exam::string::operator+=( const exam::string& operand_right )
 {
   operator=( operator+( operand_right ) );
