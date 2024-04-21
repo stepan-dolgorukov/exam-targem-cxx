@@ -18,6 +18,7 @@ namespace exam
   public:
     string( void ) = default;
     string( const char initial[] );
+    string( const exam::string& source );
 
     ~string( void );
 
