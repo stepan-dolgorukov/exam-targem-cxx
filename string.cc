@@ -1,5 +1,6 @@
 #include <cstring>
 #include <cstddef>
+#include <stdexcept>
 
 #include "string.hh"
 
@@ -132,5 +133,10 @@ exam::string::operator+=( const exam::string& operand_right )
 char
 exam::string::operator[]( std::size_t index ) const
 {
+  if( index >= _length )
+  {
+    throw std::out_of_range{ "Wrong index." };
+  }
+
   return _content[ index ];
 }
