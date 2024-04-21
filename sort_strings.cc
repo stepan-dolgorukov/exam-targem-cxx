@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <cctype>
 
 #include "string.hh"
 
@@ -27,12 +28,12 @@ main( void )
 
         if ( i < left.length() )
         {
-          character_left = left[ i ];
+          character_left = std::tolower( left[ i ] );
         }
 
         if( i < right.length() )
         {
-          character_right = right[ i ];
+          character_right = std::tolower( right[ i ] );
         }
 
         if( character_left != character_right )
