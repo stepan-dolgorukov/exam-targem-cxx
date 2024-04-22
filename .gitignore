@@ -1,0 +1,4 @@
+.vscode
+sort_strings
+*.o
+wordlist.*
